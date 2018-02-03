@@ -21,7 +21,7 @@ package de.raybit.countingshare;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
-    private ComUserRegister _CUR;
+    private SignupCom _CUR;
 
     @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_password) EditText _passwordText;
@@ -81,7 +81,7 @@ public class SignupActivity extends AppCompatActivity {
                     public void run() {
                         // On complete call either onSignupSuccess or onSignupFailed
                         if(internetAvailable()) {
-                            _CUR = new ComUserRegister();
+                            _CUR = new SignupCom();
                             Map<String, Object> answer = _CUR.sendToServer(email, password);
                             Boolean error = (Boolean) answer.get("error");
                             if (!error) {

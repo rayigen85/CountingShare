@@ -28,10 +28,12 @@
         <activity
             android:name=".SignupActivity"
             android:theme="@style/AppTheme.Dark" />
+
         <activity
             android:name=".PasswordResetActivity"
-            android:label="@string/title_activity_password_reset"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:windowSoftInputMode="stateVisible"
+            android:theme="@style/AppTheme.Dark" />
+
     </application>
 
 </manifest>

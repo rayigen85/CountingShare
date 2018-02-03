@@ -21,7 +21,7 @@ import java.util.Map;
  * Created by rayig on 02.02.2018.
  */
 
-public class ComUserLogin {
+public class LoginCom {
 
     public Map<String, Object> sendToServer(final String email, final String password){
         Map<String, Object> answer = new HashMap<String, Object>();

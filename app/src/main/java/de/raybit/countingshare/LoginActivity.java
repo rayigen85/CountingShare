@@ -24,7 +24,7 @@ import butterknife.BindView;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-    private ComUserLogin _CUL;
+    private LoginCom _CUL;
 
 
     @BindView(R.id.input_email) EditText _emailText;
@@ -64,8 +64,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-                startActivityForResult(intent, REQUEST_SIGNUP);
+                Intent intent = new Intent(getApplicationContext(), PasswordResetActivity.class);
+                startActivityForResult(intent, 1);
             }
         });
     }
@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             public void run() {
                 Looper.prepare();
 
-                _CUL = new ComUserLogin();
+                _CUL = new LoginCom();
 
                 if (internetAvailable()) {
                     Map<String, Object> answer = _CUL.sendToServer(email, password);
