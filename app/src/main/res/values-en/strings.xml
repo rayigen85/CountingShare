@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CountingShare</string>
+    <string name="SendenID">Send</string>
+    <string name="test">testing</string>
+</resources>
