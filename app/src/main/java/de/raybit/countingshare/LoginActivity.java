@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.btn_login) Button _loginButton;
     @BindView(R.id.link_signup) TextView _signupLink;
     @BindView(R.id.link_passwordReset) TextView _passwordResetLink;
-
+    @BindView(R.id.link_without_login) TextView _link_without_login;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +65,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Start the Signup activity
                 Intent intent = new Intent(getApplicationContext(), PasswordResetActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
+
+        _link_without_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Main_without_login.class);
                 startActivityForResult(intent, 1);
             }
         });

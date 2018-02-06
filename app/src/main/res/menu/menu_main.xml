@@ -4,8 +4,8 @@
     tools:context=".MainActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+        android:id="@+id/item_action_settings"
+        android:title="@string/string_action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
 
@@ -17,13 +17,13 @@
 
     <item
         android:id="@+id/action_close"
-        android:title="Close"
+        android:title="Beenden"
         android:orderInCategory="100"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_help"
-        android:title="Help"
+        android:title="Hilfe"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>

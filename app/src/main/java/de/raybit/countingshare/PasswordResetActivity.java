@@ -2,8 +2,10 @@ package de.raybit.countingshare;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -17,6 +19,8 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static android.os.Looper.*;
 
 public class PasswordResetActivity extends AppCompatActivity {
     @BindView(R.id.link_back) TextView _linkBack;
@@ -52,15 +56,22 @@ public class PasswordResetActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 new Thread(new Runnable() {
+
+
                     @Override
                     public void run() {
+                        Looper.prepare();
                         String eMail = editText_text_eMail.getText().toString();
                         PasswordResetCom _PRC = new PasswordResetCom();
                         Map<String, Object> answer = new HashMap<String, Object>();
                         answer = _PRC.sendToServer(eMail);
+                        Boolean error = (Boolean) answer.get("error");
 
-                        onSuccess(answer.get("message").toString());
+                        if (!error) onSuccess(answer.get("message").toString());
+                        else onFailure(answer.get("message").toString());
+                        Looper.loop();
                     }
+
                 }).start();
 
             }
@@ -73,5 +84,9 @@ public class PasswordResetActivity extends AppCompatActivity {
         startActivityForResult(intent, 1);
 
         finish();
+    }
+
+    public void onFailure(String msg){
+        Toast.makeText(getBaseContext(), msg, Toast.LENGTH_LONG).show();
     }
 }

@@ -1,12 +1,10 @@
 package de.raybit.countingshare;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuInflater;
@@ -33,21 +31,23 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button buttonSend;
     TextView textView;
+    FloatingActionButton _floatingActionButton_addProject;
     Button menuBTN_logout;
 
     final String scripturl = "raybit.de";
     final String scriptFile = "/app/receive_script.php";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar1);
         setSupportActionBar(myToolbar);
 
         editText = (EditText) findViewById(R.id.editTextSend);
         buttonSend = (Button) findViewById(R.id.buttonSend);
         textView = (TextView) findViewById(R.id.textViewReceive);
+        _floatingActionButton_addProject = (FloatingActionButton) findViewById(R.id.floatingActionButton_addProject);
 
         buttonSend.setOnClickListener(new View.OnClickListener() {
 
@@ -58,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Internet nicht verfügbar", Toast.LENGTH_SHORT).show();
                 }
             }
+        });
+
+        _floatingActionButton_addProject.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                //Intent intent = new Intent(getApplicationContext(), ProjectActivity.class);
+                //startActivityForResult(intent, 1);
+            }
+
         });
     }
 

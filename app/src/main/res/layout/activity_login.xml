@@ -24,12 +24,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_email"
+
+            <EditText
+                android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ray@raybit.de"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:hint="Email" />
+                android:text="rayigen85@raybit.de" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -39,12 +41,13 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
 
-            <EditText android:id="@+id/input_password"
+            <EditText
+                android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Password"
                 android:inputType="textPassword"
-                android:text="!RaymonD0308"
-                android:hint="Password"/>
+                android:text="12345" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
@@ -60,7 +63,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="No account yet? Create one"
+            android:text="@string/no_account_yet_create_one"
             android:gravity="center"
             android:textSize="16dip"/>
 
@@ -74,6 +77,13 @@
             android:text="Forgot password?"
             android:textSize="16dip" />
 
+        <TextView android:id="@+id/link_without_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/without_login"
+            android:gravity="center"
+            android:textSize="16dip"/>
 
     </LinearLayout>
 
